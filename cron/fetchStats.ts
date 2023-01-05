@@ -10,14 +10,19 @@ import { exec } from 'child_process';
 const fs = syncFs.promises;
 const execPromise = util.promisify(exec);
 
-const getPlayerConnectCodes = async (): Promise<string[]> => {
-  const doc = new GoogleSpreadsheet(settings.spreadsheetID);
-  await doc.useServiceAccountAuth(creds);
-  await doc.loadInfo(); // loads document properties and worksheets
-  const sheet = doc.sheetsByIndex[0];
-  const rows = (await sheet.getRows()).slice(1); // remove header row
-  return [...new Set(rows.map((r) => r._rawData[1]).filter(r => r !== ''))] as string[]
-};
+// hardcoding the player codes below while I work out the kinks with the google integration
+
+// const getPlayerConnectCodes = async (): Promise<string[]> => {
+//   const doc = new GoogleSpreadsheet(settings.spreadsheetID);
+//   await doc.useServiceAccountAuth(creds);
+//   await doc.loadInfo(); // loads document properties and worksheets
+//   const sheet = doc.sheetsByIndex[0];
+//   const rows = (await sheet.getRows()).slice(1); // remove header row
+//   return [...new Set(rows.map((r) => r._rawData[1]).filter(r => r !== ''))] as string[]
+// };
+
+const getPlayerConnectCodes = async (): Promise<string[]> => { 
+	return ['LINK#777','TEQU#973','IZZY#756','MINW#207','Pota#710','TEQU#973','Zavi#614','QQ#230','TOMM#257','chil#539','LINK#777','REID#217'] };
 
 const getPlayers = async () => {
   const codes = await getPlayerConnectCodes()

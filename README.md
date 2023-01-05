@@ -1,6 +1,6 @@
-# Colorado Ranked Slippi Leaderboard
+# New Mexico Ranked Slippi Leaderboard
 
-Code powering https://grantismo.github.io/CoSlippiLeaderboard/#/
+Code powering https://izzythecubemaster.github.io/NMSlippiLeaderboard/#/
 
 ## Technologies
 
@@ -9,8 +9,9 @@ Code powering https://grantismo.github.io/CoSlippiLeaderboard/#/
 - [Eslint](http://eslint.org/) for linting
 - [Tailwind](https://tailwindcss.com/) for css
 
+Fork of [CoSlippiLeaderboard](https://github.com/Grantismo/CoSlippiLeaderboard)
 
-Fork of [reacts-pages-boilerplate](https://github.com/rtivital/react-pages-boilerplate)
+Which is a fork of [reacts-pages-boilerplate](https://github.com/rtivital/react-pages-boilerplate)
 
 ## How it works
 
@@ -28,14 +29,14 @@ The leaderboard is built from two programs:
 ## Getting started
 
 - Easiest to get working on a unix system (linux/mac). On windows you can use WSL to install ubuntu. https://learn.microsoft.com/en-us/windows/wsl/install
-- Clone this repository: `git clone https://github.com/Grantismo/CoSlippiLeaderboard.git` 
+- Clone this repository: `git clone https://github.com/izzythecubemaster/NMSlippiLeaderboard.git` 
 - (Optional) Install NVM -- instructions [here](https://github.com/creationix/nvm)
 - (Optional) Run `nvm use 18.12.0`. This will ensure that you are running the supported version of Node.js.
 - Install yarn `npm install --global yarn`
 - Install dependencies: `yarn` (from your code directory).
 - (Optional) Install the github cli tool -- instructions here https://github.com/cli/cli#installation
 - (Optional) Run `gh auth login`
-- Set your repoPath in settings.js and  "homepage" in package.json to your github pages url (e.g. https://grantismo.github.io/CoSlippiLeaderboard/)
+- Set your repoPath in settings.js and  "homepage" in package.json to your github pages url (e.g. https://izzythecubemaster.github.io/NMSlippiLeaderboard/)
 
 ### If you want to collect connect codes from a google form
 - Create a google form to collect player tags from your region. ![image](https://user-images.githubusercontent.com/911232/207989907-256100e3-c215-4699-9ae7-655d5345cbd4.png)
@@ -105,5 +106,5 @@ touch cron/logs/log.txt
 - `npm run deploy` – builds and deploys project to Github pages
 - `./cron/run.sh` - manually runs the cron job
 
-## Support me
+## Support the CoSlippiLeaderboard dev
 ☕ [buy me a coffee](https://www.buymeacoffee.com/blorppppp)
