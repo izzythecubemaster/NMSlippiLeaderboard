@@ -22,7 +22,8 @@ const execPromise = util.promisify(exec);
 // };
 
 const getPlayerConnectCodes = async (): Promise<string[]> => { 
-	return ['LINK#777','TEQU#973','IZZY#756','MINW#207','Pota#710','TEQU#973','Zavi#614','QQ#230','TOMM#257','chil#539','LINK#777','REID#217'] };
+	return ['LINK#777','TEQU#973','IZZY#756','MINW#207','POTA#710','ZAVI#614','QQ#230','TOMM#257','CHIL#539','REID#217']
+};
 
 const getPlayers = async () => {
   const codes = await getPlayerConnectCodes()
