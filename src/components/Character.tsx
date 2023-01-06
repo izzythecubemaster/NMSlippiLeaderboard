@@ -93,7 +93,7 @@ export function Character({ id, totalGames, stats }: Props) {
         strokeLinecap: 'butt',
 	  		pathColor: 'rgb(22 163 74)'
       })}>
-      <img className="md:h-8 md:w-8 h-3 w-3" src={icon} />
+      <img className="player-icon" src={icon} />
     </CircularProgressbarWithChildren>
   </div>
   <Tooltip anchorId={charId} />

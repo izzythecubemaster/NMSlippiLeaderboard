@@ -1,0 +1,45 @@
+table[class*='table'] {
+    display: block;
+    margin: 0 auto;
+    max-width: 900px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background-color: rgb(45, 49, 58);
+    max-width: 355px;
+    @media screen and (min-width: 768px) {
+        max-width: 900px;
+      }
+    tbody {
+        tr {
+            border-bottom-width: 1px;
+            border-color: #000000;
+            td {
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                [class*='text-green-500'] {
+                    color: #2EFF40;
+                }
+                a {
+                    display: inline;
+                    color: #ffffff;
+                    font-weight: 600;
+                    &:hover {
+                        text-decoration: none;
+                        color: #B4B4B4;
+                    }
+                }
+                div {
+                    img {
+                        max-width: 64px;
+                    }
+                    [data-test-id*='CircularProgressbarWithChildren'] {
+                        max-width: 64px;
+                        img[class*='player-icon'] {
+                            max-width: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

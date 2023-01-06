@@ -9,6 +9,8 @@ import relativeTime from 'dayjs/plugin/relativeTime' // import plugin
 import * as settings from '../../../../settings'
 dayjs.extend(relativeTime)
 
+import './homepage.module.scss';
+import NMSlippiIcon from '../../../../images/home/nm-slippi-ranked.png';
 
 const setCount = (player: Player) => {
   return player.rankedNetplayProfile.wins +
@@ -52,20 +54,30 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center h-screen p-8">
-      <h1 className="text-3xl m-4 text-center text-white">
+    <div className="leaderboard">
+      <h1 className="header">
+        <img className="slippi-icon" src={NMSlippiIcon} />
         {settings.title}
       </h1>
-      <div className="p-1 text-gray-300"> Updated {updateDesc}</div>
+      <div className="last-updated"> Updated {updateDesc}</div>
       <Table players={players} />
-      <div className="p-4 text-gray-300 flex flex-col">
-        <div>Built by blorppppp</div>
-        <div>
+      <div className="credits">
+        <p>
+          <a href="https://github.com/izzythecubemaster/NMSlippiLeaderboard" target="_blank" rel="noreferrer"
+              className="link">
+            NMSlippiLeaderboard
+          </a>
+          {' '}is a fork of{' '}
+          <a href="https://github.com/Grantismo/CoSlippiLeaderboard" target="_blank" rel="noreferrer"
+              className="link">
+            CoSlippiLeaderboard
+          </a>
+          {' '}built by blorppppp, if you can please{' '}
           <a href="https://www.buymeacoffee.com/blorppppp" target="_blank" rel="noreferrer"
-             className="text-gray-400 hover:text-indigo-700 mr-2 hover:underline">
-            Buy me a coffee
+              className="link">
+            buy them a coffee
           </a>☕
-        </div>
+        </p>
       </div>
     </div>
   );

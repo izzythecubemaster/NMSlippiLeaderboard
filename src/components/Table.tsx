@@ -2,6 +2,8 @@ import { Row } from './Row';
 import { Player } from '../lib/player'
 import { useMediaQuery } from 'react-responsive'
 
+import './table.module.scss';
+
 interface Props {
   players: Player[]
 }
@@ -10,12 +12,12 @@ export function Table({ players }: Props) {
   const isSm = useMediaQuery({ query: '(min-width: 640px)' })
 
   const th = (text) => {
-    return <th className="text-xs md:text-sm font-medium text-white md:px-6 md:py-4 px-3 py-3">{text}</th>
+    return <th>{text}</th>
   }
   return (
     <>
-    <table className="table-fixed text-center">
-      <thead className="bg-gray-800">
+    <table className="table">
+      <thead>
         <tr>
           {th('Rank')}
           {th('Player')}
