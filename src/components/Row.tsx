@@ -7,8 +7,23 @@ interface Props {
   player: Player
 }
 
+// Custom names override what the Slippi API has
+// I put the option here for names that were inputted on the google form.
+const customNames = {
+  "REID#217": "Reidd",
+  "TOMM#257": "Goose",
+  "CHIL#539": "Shortbutlong/Ironwood/Chillestbread",
+  "ZAVI#614": "SnakeManJohnson",
+  "TEQU#973": "Mrfundamentals",
+  "QQ#230": "See Biscuit",
+};
+
 export function Row({ player }: Props) {
-  const names = player.displayName.split('/');
+  let names = [player.displayName];
+  if (customNames.hasOwnProperty(player.connectCode.code)) {
+      let customName = customNames[player.connectCode.code];
+      names = customName.split('/');
+  }
 
   const codeToId = (code: string) => {
     const parts = code.split('#')
