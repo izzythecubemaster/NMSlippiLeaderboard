@@ -10,12 +10,16 @@ interface Props {
 // Custom names override what the Slippi API has
 // I put the option here for names that were inputted on the google form.
 const customNames = {
-  "REID#217": "Reidd",
+  "TEQU#973": "Mrfundamentals",
+  "IZZY#756": "Fuzzy",
+  "MINW#207": "Minwu",
+  "POTA#710": "zains bussy",
+  "ZAVI#614": "SnakeManJohnson",
+  "QQ#230": "See Biscuit",
   "TOMM#257": "Goose",
   "CHIL#539": "Shortbutlong/Ironwood/Chillestbread",
-  "ZAVI#614": "SnakeManJohnson",
-  "TEQU#973": "Mrfundamentals",
-  "QQ#230": "See Biscuit",
+  "LINK#777": "NintaiLink",
+  "REID#217": "Reidd",
 };
 
 export function Row({ player }: Props) {
