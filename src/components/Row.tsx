@@ -86,7 +86,7 @@ export function Row({ player }: Props) {
         <a className="md:text-xl text-sm max-w-xs text-gray-300 hover:text-gray-500 hover:underline" href={codeToUrlSlug(player.connectCode.code)}>
           {
             names.map((name) =>
-              <p>{name}</p>
+              <p key={`uname_${name}`}>{name}</p>
             )
           }
         </a>
