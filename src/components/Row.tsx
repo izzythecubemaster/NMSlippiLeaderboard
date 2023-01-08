@@ -20,6 +20,8 @@ const customNames = {
   "CHIL#539": "Shortbutlong/Ironwood/Chillestbread",
   "LINK#777": "NintaiLink",
   "CANA#607": "Canary",
+  "NOC#0": "Noc",
+  "YHO#485": "yho",
   "REID#217": "Reidd",
 };
 
