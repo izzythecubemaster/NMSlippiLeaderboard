@@ -90,9 +90,9 @@ module.exports = {
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <meta property=’og:title’ content='${settings.title}'/>
-            <meta property=’og:image’ content='https://i.ibb.co/R2RsKnM/nm-slippi-thumb.png’/>
-            <meta property=’og:description’ content='${settings.title}'/>
+            <meta property='og:title' content='${settings.title}'/>
+            <meta property='og:image' content='https://i.ibb.co/R2RsKnM/nm-slippi-thumb.png'/>
+            <meta property='og:description' content='${settings.title}'/>
             <meta property='og:image:width' content='1200' />
             <meta property='og:image:height' content='627' />
             <meta property="og:type" content='website'/>
