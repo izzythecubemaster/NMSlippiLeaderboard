@@ -22,6 +22,7 @@ const customNames = {
   "CANA#607": "Canary",
   "NOC#0": "Noc",
   "YHO#485": "yho",
+  "NOTP#148": "NotPIMP",
   "REID#217": "Reidd",
 };
 
