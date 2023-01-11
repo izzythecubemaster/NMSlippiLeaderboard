@@ -90,6 +90,12 @@ module.exports = {
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta property=’og:title’ content='${settings.title}'/>
+            <meta property=’og:image’ content='https://i.ibb.co/R2RsKnM/nm-slippi-thumb.png’/>
+            <meta property=’og:description’ content='${settings.title}'/>
+            <meta property='og:image:width' content='1200' />
+            <meta property='og:image:height' content='627' />
+            <meta property="og:type" content='website'/>
             <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
             <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
             <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
