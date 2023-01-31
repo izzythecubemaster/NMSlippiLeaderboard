@@ -10,12 +10,12 @@ interface Props {
 // Custom names override what the Slippi API has
 // I put the option here for names that were inputted on the google form.
 const customNames = {
-  "TEQU#973": "Mrfundamentals", 
+  "TEQU#973": "Mrfundamentals",
   "IZZY#756": "Fuzzy",
   "MINW#207": "Minwu",
-  "POTA#710": "zains bussy",    
+  "POTA#710": "zains bussy",
   "ZAVI#614": "SnakeManJohnson",
-  "QQ#230": "See Biscuit",      
+  "QQ#230": "See Biscuit",
   "TOMM#257": "Goose",
   "CHIL#539": "Shortbutlong/Ironwood/Chillestbread",
   "LINK#777": "NintaiLink",
@@ -24,6 +24,8 @@ const customNames = {
   "YHO#485": "yho",
   "NOTP#148": "NotPIMP",
   "TOXC#557": "ToxicStar_10094",
+  "STER#536": "Ster",
+  "USAI#439": "Usainkrot",
   "REID#217": "Reidd",
 };
 

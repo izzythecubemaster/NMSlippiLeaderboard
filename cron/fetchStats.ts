@@ -22,7 +22,7 @@ const execPromise = util.promisify(exec);
 // };
 
 const getPlayerConnectCodes = async (): Promise<string[]> => { 
-	return ['LINK#777','TEQU#973','IZZY#756','MINW#207','POTA#710','ZAVI#614','QQ#230','TOMM#257','CHIL#539','CANA#607','NOC#0','YHO#485','NOTP#148','TOXC#557','REID#217'];
+	return ['LINK#777','TEQU#973','IZZY#756','MINW#207','POTA#710','ZAVI#614','QQ#230','TOMM#257','CHIL#539','CANA#607','NOC#0','YHO#485','NOTP#148','TOXC#557','STER#536','USAI#439','REID#217'];
 };
 
 const getPlayers = async () => {
