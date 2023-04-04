@@ -11,5 +11,6 @@ dist
 .DS_Store
 *.swp
 secrets/*
+cron/*.csv
 cron/data/*
 cron/logs/*
