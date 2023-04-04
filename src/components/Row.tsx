@@ -32,6 +32,7 @@ const customNames = {
   "SECR#513": "bains zussy",
   "ROBO#592": "Robotusslin",
   "LAGS#659": "Seraph",
+  "TITS#420": "Elijah",
   "REID#217": "Reidd",
 };
 
