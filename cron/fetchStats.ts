@@ -22,7 +22,7 @@ const execPromise = util.promisify(exec);
 // };
 
 const getPlayerConnectCodes = async (): Promise<string[]> => { 
-	return ['LINK#777','TEQU#973','IZZY#756','MINW#207','POTA#710','ZAVI#614','QQ#230','TOMM#257','CHIL#539','CANA#607','NOC#0','YHO#485','NOTP#148','TOXC#557','STER#536','USAI#439','APUE#423','DAI#610','AMOR#333','SECR#513','ROBO#592','LAGS#659','TITS#420','REID#217'];
+	return ['TEQU#973','IZZY#756','MINW#207','POTA#710','ZAVI#614','QQ#230','TOMM#257','CHIL#539','LINK#777','CANA#607','NOC#0','YHO#485','NOTP#148','TOXC#557','STER#536','USAI#439','APUE#423','DAI#610','AMOR#333','SECR#513','ROBO#592','LAGS#659','TITS#420','GUN#9000','GOOP#0','MEGA#411','SHUA#213','REID#217'];
 };
 
 const getPlayers = async () => {
