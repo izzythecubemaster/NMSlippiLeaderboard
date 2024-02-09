@@ -14,3 +14,4 @@ secrets/*
 cron/*.csv
 cron/data/*
 cron/logs/*
+.npmrc
