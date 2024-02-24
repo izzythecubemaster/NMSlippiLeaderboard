@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { getPlayerDataThrottled } from '../../../lib/slippi';
 import { Table } from '../../Table';
 import { Player } from '../../../lib/player'
-import playersOld from '../../../../cron/data/players-old.json';
-import playersNew from '../../../../cron/data/players-new.json';
 import timestamp from '../../../../cron/data/timestamp.json';
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime' // import plugin
 import * as settings from '../../../../settings'
 dayjs.extend(relativeTime)
+
+import playerCodes from '../../../../config/playercodes.json';
 
 import './homepage.module.scss';
 import NMSlippiIcon from '../../../../images/home/nm-slippi-ranked.png';
@@ -29,28 +30,29 @@ const sortAndPopulatePlayers = (players: Player[]) => {
 }
 
 export default function HomePage() {
+  const {"player_codes": codes} = playerCodes;
+  const futureLength = codes.length;
 
-  const rankedPlayersOld = sortAndPopulatePlayers(playersOld)
-  const oldPlayersMap = new Map(
-    rankedPlayersOld.map((p) => [p.connectCode.code, p]));
-  
-  const players = sortAndPopulatePlayers(playersNew);
-  players.forEach((p) => {
-    const oldData = oldPlayersMap.get(p.connectCode.code)
-    if(oldData) {
-      p.oldRankedNetplayProfile = oldData.rankedNetplayProfile
-    }
-  })
+  const [currentPlayers, setCurrentPlayers] = useState([]);
+  const [isUpdated, setIsUpdated] = useState(false);
 
-  // continuously update
-  const updatedAt = dayjs(timestamp.updated);
-  const [updateDesc, setUpdateDesc] = useState(updatedAt.fromNow())
   useEffect(() => {
-    const interval = setInterval(
-      () => setUpdateDesc(updatedAt.fromNow()), 1000*60);
-    return () => {
-      clearInterval(interval);
-    };
+    async function getPlayers() {
+      // console.log(`Found ${codes.length} player codes`)
+      const allData = codes.map(code => getPlayerDataThrottled(code));
+      const results = await Promise.all(allData.map(p => p.catch(e => e)));
+      const validResults = results.filter(result => !(result instanceof Error));
+      const unsortedPlayers = validResults
+        .filter((data: any) => data?.data?.getConnectCode?.user)
+        .map((data: any) => data.data.getConnectCode.user);
+      const finalResults = unsortedPlayers.sort((p1, p2) =>
+        p2.rankedNetplayProfile.ratingOrdinal - p1.rankedNetplayProfile.ratingOrdinal)
+      setCurrentPlayers(sortAndPopulatePlayers(finalResults));
+      setIsUpdated(true);
+    }
+    if (!isUpdated) {
+      getPlayers();
+    }
   }, []);
 
   return (
@@ -59,24 +61,19 @@ export default function HomePage() {
         <img className="slippi-icon" src={NMSlippiIcon} />
         {settings.title}
       </h1>
-      <div className="last-updated"> Updated {updateDesc}</div>
-      <Table players={players} />
+      <Table players={currentPlayers} futureLength={futureLength} />
       <div className="credits">
         <p>
           <a href="https://github.com/izzythecubemaster/NMSlippiLeaderboard" target="_blank" rel="noreferrer"
               className="link">
             NMSlippiLeaderboard
           </a>
-          {' '}is a fork of{' '}
+          {' '}modified by izzythecubemaster is a fork of{' '}
           <a href="https://github.com/Grantismo/CoSlippiLeaderboard" target="_blank" rel="noreferrer"
               className="link">
             CoSlippiLeaderboard
           </a>
-          {' '}built by blorppppp, if you can please{' '}
-          <a href="https://www.buymeacoffee.com/blorppppp" target="_blank" rel="noreferrer"
-              className="link">
-            buy them a coffee
-          </a>☕
+          {' '}built by blorppppp
         </p>
       </div>
     </div>

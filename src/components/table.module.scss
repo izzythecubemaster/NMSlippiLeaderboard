@@ -1,3 +1,7 @@
+p[class*='loadingText'] {
+    display: inline-block;
+    margin-right: 10px;
+}
 table[class*='table'] {
     display: block;
     margin: 0 auto;

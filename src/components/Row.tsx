@@ -3,42 +3,15 @@ import { Player } from '../lib/player'
 import { getRank } from '../lib/ranks'
 import { Characters } from './Characters'
 
+import playerNames from '../../config/playernames.json';
+
 interface Props {
   player: Player
 }
 
 // Custom names override what the Slippi API has
 // I put the option here for names that were inputted on the google form.
-const customNames = {
-  "TEQU#973": "Mrfundamentals",
-  "IZZY#756": "Fuzzy",
-  "MINW#207": "Minwu",
-  "POTA#710": "zains bussy",
-  "ZAVI#614": "SnakeManJohnson",
-  "QQ#230": "See Biscuit",
-  "TOMM#257": "Goose",
-  "CHIL#539": "Shortbutlong/Ironwood/Chillestbread",
-  "LINK#777": "NintaiLink",
-  "CANA#607": "Canary",
-  "NOC#0": "Noc",
-  "YHO#485": "yho",
-  "NOTP#148": "NotPIMP",
-  "TOXC#557": "ToxicStar_10094",
-  "STER#536": "Ster",
-  "USAI#439": "Usainkrot",
-  "APUE#423": "Strat",
-  "DAI#610": "Dai",
-  "AMOR#333": "gloomshot",
-  "SECR#513": "bains zussy",
-  "ROBO#592": "Robotusslin",
-  "LAGS#659": "Seraph",
-  "TITS#420": "Elijah",
-  "GUN#9000": "SadSack",
-  "GOOP#0": "Goop",
-  "MEGA#411": "Xmegga",
-  "SHUA#213": "Shua",
-  "REID#217": "Reidd",
-};
+const customNames = playerNames;
 
 export function Row({ player }: Props) {
   let names = [player.displayName];
@@ -91,6 +64,10 @@ export function Row({ player }: Props) {
   const totalGames = player.rankedNetplayProfile.characters.reduce((acc, val)=> acc + val.gameCount, 0);
   const rankChange = getRankChange(player);
   const ratingChange = getRatingChange(player);
+
+  if (player.rankedNetplayProfile.ratingUpdateCount === 0) {
+    return null;
+  }
 
   return (
     <tr className={`${playerRank.bgClass} border-separate border-spacing-2 border-b-2 border-gray-600`} >

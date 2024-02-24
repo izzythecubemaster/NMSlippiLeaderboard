@@ -1,6 +1,7 @@
 import { getPlayerDataThrottled } from './slippi'
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import creds from '../secrets/creds.json';
+import playerCodes from '../config/playercodes.json';
 import * as syncFs from 'fs';
 import * as path from 'path';
 import util from 'util';
@@ -21,8 +22,9 @@ const execPromise = util.promisify(exec);
 //   return [...new Set(rows.map((r) => r._rawData[1]).filter(r => r !== ''))] as string[]
 // };
 
+const {"player_codes": p_codes} = playerCodes;
 const getPlayerConnectCodes = async (): Promise<string[]> => { 
-	return ['TEQU#973','IZZY#756','MINW#207','POTA#710','ZAVI#614','QQ#230','TOMM#257','CHIL#539','LINK#777','CANA#607','NOC#0','YHO#485','NOTP#148','TOXC#557','STER#536','USAI#439','APUE#423','DAI#610','AMOR#333','SECR#513','ROBO#592','LAGS#659','TITS#420','GUN#9000','GOOP#0','MEGA#411','SHUA#213','REID#217'];
+	return p_codes;
 };
 
 const getPlayers = async () => {
