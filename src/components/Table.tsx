@@ -1,6 +1,7 @@
 import { Row } from './Row';
 import { Player } from '../lib/player'
 import { useMediaQuery } from 'react-responsive'
+import './table.module.scss';
 
 interface Props {
   players: Player[]

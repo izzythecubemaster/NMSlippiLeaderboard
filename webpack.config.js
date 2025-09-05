@@ -65,7 +65,7 @@ module.exports = {
         type: 'asset/resource',
       },
       {
-        test: /\.css$/i,
+        test: /\.(css|sass|scss)$/i,
         use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
@@ -82,7 +82,7 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
-      favicon: path.join(__dirname, './favicon.png'),
+      favicon: path.join(__dirname, './favicon.ico'),
       templateContent: ({ htmlWebpackPlugin }) => `
         <!DOCTYPE html>
         <html>

@@ -3,6 +3,8 @@ import { Player } from '../lib/player'
 import { Character } from './Character'
 import { useMediaQuery } from 'react-responsive'
 
+import './characters.module.scss';
+
 interface Props {
   player: Player
   totalGames: number
@@ -38,7 +40,7 @@ export function Characters({ player, totalGames }: Props) {
         <Character id={codeToId(player.connectCode.code)}
           key={c.character} totalGames={totalGames} stats={c}/>)}
     {characters.length > CONDENSED_SIZE &&
-    <div className="md:mx-1 mx-0.5 p-1 rounded-full border-gray-300 md:border-2 border border-dashed md:h-12 md:w-12 h-4 w-4 text-xs flex flex-col items-center justify-center hover:border-solid hover:text-gray-500 hover:border-gray-500" onClick={expandChracters} >
+    <div className="md:mx-1 mx-0.5 p-1 rounded-full border-gray-300 md:border-2 border border-dashed md:h-12 md:w-12 h-4 w-4 text-xs flex flex-col items-center justify-center hover:border-solid hover:text-gray-500 hover:border-gray-500 more-chars" onClick={expandChracters} >
       {isSm && <><div>+{characters.length - CONDENSED_SIZE}</div><div>more</div></>}
       {!isSm && '+'}
     </div>}

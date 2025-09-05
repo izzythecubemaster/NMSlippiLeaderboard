@@ -1,0 +1,79 @@
+p[class*='loadingText'] {
+    display: inline-block;
+    margin-right: 10px;
+}
+table[class*='table'] {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid rgb(30, 31, 37);
+    border-radius: 4px;
+    background-color: rgb(45, 49, 58);
+    max-width: 360px;
+    @media screen and (min-width: 640px) {
+        max-width: 423px;
+    }
+    @media screen and (min-width: 768px) {
+        max-width: 803px;
+    }
+    thead {
+        border: 0px solid rgb(30, 31, 37);
+        border-bottom-width: 1px;
+        tr {
+            th {
+                color: rgb(121, 123, 129);
+                font-weight: 500;
+                padding: 8px 4px;
+                @media screen and (min-width: 768px) {
+                    padding: 8px 22px;
+                }
+            }
+        }
+    }
+    tbody {
+        tr {
+            border-bottom-width: 1px;
+            border-color: rgb(30, 31, 37);
+            td {
+                padding: 8px 4px;
+                @media screen and (min-width: 768px) {
+                    padding: 8px 22px;
+                }
+                [class*='text-green-500'] {
+                    color: #2EFF40;
+                }
+                a {
+                    display: inline;
+                    color: #ffffff;
+                    font-weight: 600;
+                    transition: all 200ms ease-in-out;
+                    &:hover {
+                        text-decoration: none;
+                        color: #B4B4B4;
+                    }
+                }
+                div {
+                    img {
+                        max-width: 64px;
+                    }
+                    [class*='items-center'] {
+                        min-width: 128px;
+                    }
+                    [data-test-id*='CircularProgressbarWithChildren'] {
+                        max-width: 64px;
+                        cursor: help;
+                        img[class*='player-icon'] {
+                            max-width: 12px;
+                            transition: all 200ms ease-in-out;
+                            @media screen and (min-width: 640px) {
+                                max-width: 24px;
+                                &:hover {
+                                    max-width: 28px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
